@@ -7,18 +7,21 @@ The ROM file can be copied into your multicart and be run like any other ROM hom
 
 The ROM file was built using CVBasic and GASM80. Thanks, NANOCHESS !!!!!
 
-CVBASIC github repository    nanochess/CVBasic
-GASM80 github repository     nanochess/gasm80
+    CVBASIC github repository    nanochess/CVBasic
+
+    GASM80 github repository     nanochess/gasm80
 
 For compiling, use the following two sentences frm the file directory where the ".bas" file was copied to:
 
-CVBasic VRAM-Check.bas VRAM-Check.asm
-gasm80 VRAM-Check.asm -o VRAM-Check.rom
+    CVBasic VRAM-Check.bas VRAM-Check.asm
+
+    gasm80 VRAM-Check.asm -o VRAM-Check.rom
 
 Take note you must copy these two files distributed in the CVBasic repository to the same directory where your VRAM-Check.bas file was copied to
 
-cvbasic_prologue.asm
-cvbasic_epilogue.asm
+    cvbasic_prologue.asm
+
+    cvbasic_epilogue.asm
 
 
 The rom file VRAM-Check.rom file has been included in this distribution for your convenience if you don.'t want to enter in building details
@@ -31,10 +34,13 @@ introduced to avoid some writing/reading conflict experienced, surely because in
 
 The partterns are written and red and compared, If any difference is found the program shows the difference found, giving the following information:
 
-Pattern written (decimal format)
-Pattern red (decimal format)
-XOR between pattern written and red (decimal format)
-Memory address (decimal format)
+    Pattern written (decimal format)
+    
+    Pattern red (decimal format)
+    
+    XOR between pattern written and red (decimal format)
+    
+    Memory address (decimal format)
 
 Only 23 first errors are shown in this screen
 
