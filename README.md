@@ -28,7 +28,7 @@ chip is conected  to the CPU through the TMS9928A chip.
 I would like to think all the console revision were connected in the same way as the one I own, but I cannot be sure of that. Please, check the DRAM chip connections to the TMS9928A  and Z80 CPU before replace any chip in your own consoles.
 
 
-In my PAL Colecovision Console the chips are disposed in the mother board as per this distribution
+In my PAL Colecovision Console the chips are disposed in the motherboard as per this distribution
 
 | | |
 |--------|--------|
