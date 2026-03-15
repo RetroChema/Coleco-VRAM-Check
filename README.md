@@ -1,6 +1,30 @@
 # Coleco-VRAM-Check
 Homebrew for Colecovision VRAM checking
 
+IMPORTANT NOTICE
+================
+
+The Colecovision Console design is not naming the DRAM Chips as per their binary significant bit. This means the bit stored in the UI0 Chip is not the LSB (2^0 bit) read by the TMS9928A or the Z80 CPU
+In the revision of PAL Console I own, the way the chips are conected are as follows:
+
+Z80 CPU    TMS9928A IN    TMS9928A OUT    DRAM CHIP
+=======    ===========    ============    =========
+D0 (14) ---- CD7 (17) ----- RD7 (25) ----- UI1 (14)
+D1 (15) ---- CD6 (18) ----- RD6 (26) ----- UI3 (14)
+D2 (12) ---- CD5 (19) ----- RD5 (27) ----- UI5 (14)
+D3 (8)  ---- CD4 (20) ----- RD4 (28) ----- UI7 (14)
+D4 (7)  ---- CD3 (21) ----- RD3 (29) ----- UI0 (14)
+D5 (9)  ---- CD2 (22) ----- RD2 (30) ----- UI2 (14)
+D6 (10) ---- CD1 (23) ----- RD1 (31) ----- UI4 (14)
+D7 (13) ---- CD0 (24) ----- RD0 (32) ----- UI6 (14)
+
+This means the faulty chips cannot be identified directly by the weigth of the wrong bits. They need to be indentified looking the correct weigth in the CPU, being D0 the LSB and D7 MSB and looking the
+chip conected really to the CPU through the TMS9928A chip.
+
+I would like to think all the console revision were connected in the same way as the one I own, but I cannot be sure of that. Please, check the DRAM chip connections to the TMS9928A before replace any chip in your own consoles.
+
+
+
 This program helps to find out the faulty DRAM Chips between the set of 8 chips included in the Colecovision console
 
 The ROM file can be copied into your multicart and be run like any other ROM homebrew or game
