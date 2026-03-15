@@ -7,7 +7,7 @@ Homebrew for Colecovision VRAM checking
 # IMPORTANT NOTICE
 
 The Colecovision Console design is not naming the DRAM Chips as per their binary significant bit. This means the bit stored in the UI0 Chip is not the LSB (2^0 bit) read by the TMS9928A or the Z80 CPU
-In the revision of PAL Console I own, the way the chips are conected are as follows:
+In the revision of PAL Console I own, the way the chips are conected is as follows:
 
 |Z80 CPU|TMS9928A IN|TMS9928A OUT|DRAM CHIP|
 |-------|-----------|------------|----------|
