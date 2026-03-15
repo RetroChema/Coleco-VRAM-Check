@@ -1,36 +1,49 @@
 # Coleco-VRAM-Check
 Homebrew for Colecovision VRAM checking
 
-IMPORTANT NOTICE
-================
+
+--------
+
+# IMPORTANT NOTICE
 
 The Colecovision Console design is not naming the DRAM Chips as per their binary significant bit. This means the bit stored in the UI0 Chip is not the LSB (2^0 bit) read by the TMS9928A or the Z80 CPU
 In the revision of PAL Console I own, the way the chips are conected are as follows:
 
-Z80 CPU        TMS9928A IN        TMS9928A OUT        DRAM CHIP
+|Z80 CPU|TMS9928A IN|TMS9928A OUT|DRAM CHIP|
+|-------|-----------|------------|----------|
+|D0 (14)|CD7 (17)|RD7 (25)|UI1 (14)|
+|D1 (15)|CD6 (18)|RD6 (26)|UI3 (14)|
+|D2 (12)|CD5 (19)|RD5 (27)|UI5 (14)|
+|D3 (8)|CD4 (20)|RD4 (28)|UI7 (14)|
+|D4 (7)|CD3 (21)|RD3 (29)|UI0 (14)|
+|D5 (9)|CD2 (22)|RD2 (30)|UI2 (14)|
+|D6 (10)|CD1 (23)|RD1 (31)|UI4 (14)|
+|D7 (13)|CD0 (24)|RD0 (32)|UI6 (14)|
 
-D0 (14) ---- CD7 (17) ----- RD7 (25) ----- UI1 (14)
+*Number in brackets are the pin number
 
-D1 (15) ---- CD6 (18) ----- RD6 (26) ----- UI3 (14)
+This means the faulty chips cannot be identified directly by the weigth of the wrong bits. They need to be indentified looking the correct weigth in the CPU, being D0 the LSB and D7 MSB and looking which
+chip is conected  to the CPU through the TMS9928A chip.
 
-D2 (12) ---- CD5 (19) ----- RD5 (27) ----- UI5 (14)
+I would like to think all the console revision were connected in the same way as the one I own, but I cannot be sure of that. Please, check the DRAM chip connections to the TMS9928A  and Z80 CPU before replace any chip in your own consoles.
 
-D3 (8)  ---- CD4 (20) ----- RD4 (28) ----- UI7 (14)
 
-D4 (7)  ---- CD3 (21) ----- RD3 (29) ----- UI0 (14)
+In my PAL Colecovision Console the chips are disposed in the mother board as per this distribution
 
-D5 (9)  ---- CD2 (22) ----- RD2 (30) ----- UI2 (14)
+| | |
+|--------|--------|
+|UI5 - D2|UI7 - D3|
+|UI3 - D1|UI0 - D4|
+|UI1 - D0|UI4 - D6|
+|UI6 - D7|UI2 - D5|
+|TMS9928A|TMS9928A|
 
-D6 (10) ---- CD1 (23) ----- RD1 (31) ----- UI4 (14)
 
-D7 (13) ---- CD0 (24) ----- RD0 (32) ----- UI6 (14)
+In my case, I need to substitute the 6SB that was the faulty bit, so I looked for the D6 chip, which is UI4.
 
-This means the faulty chips cannot be identified directly by the weigth of the wrong bits. They need to be indentified looking the correct weigth in the CPU, being D0 the LSB and D7 MSB and looking the
-chip conected really to the CPU through the TMS9928A chip.
+I am going to deliver a new version of the software indicating the reference of the faulty chip, but I cannot be sure of all the motherboards releases have exactly the same connections. Pleaase, review this carefully before substitutee any chip!!
 
-I would like to think all the console revision were connected in the same way as the one I own, but I cannot be sure of that. Please, check the DRAM chip connections to the TMS9928A before replace any chip in your own consoles.
-
-=====================================================================================================================================================================
+----------
 
 This program helps to find out the faulty DRAM Chips between the set of 8 chips included in the Colecovision console
 
