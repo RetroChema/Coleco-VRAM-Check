@@ -8,7 +8,7 @@ The Colecovision Console design is not naming the DRAM Chips as per their binary
 In the revision of PAL Console I own, the way the chips are conected are as follows:
 
 Z80 CPU    TMS9928A IN    TMS9928A OUT    DRAM CHIP
-=======    ===========    ============    =========
+
 D0 (14) ---- CD7 (17) ----- RD7 (25) ----- UI1 (14)
 D1 (15) ---- CD6 (18) ----- RD6 (26) ----- UI3 (14)
 D2 (12) ---- CD5 (19) ----- RD5 (27) ----- UI5 (14)
@@ -23,7 +23,7 @@ chip conected really to the CPU through the TMS9928A chip.
 
 I would like to think all the console revision were connected in the same way as the one I own, but I cannot be sure of that. Please, check the DRAM chip connections to the TMS9928A before replace any chip in your own consoles.
 
-
+=====================================================================================================================================================================
 
 This program helps to find out the faulty DRAM Chips between the set of 8 chips included in the Colecovision console
 
