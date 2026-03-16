@@ -11,14 +11,14 @@ In the revision of PAL Console I own, the way the chips are conected is as follo
 
 |Z80 CPU|TMS9928A IN|TMS9928A OUT|DRAM CHIP|
 |-------|-----------|------------|----------|
-|D0 (14)|CD7 (17)|RD7 (25)|UI1 (14)|
-|D1 (15)|CD6 (18)|RD6 (26)|UI3 (14)|
-|D2 (12)|CD5 (19)|RD5 (27)|UI5 (14)|
-|D3 (8)|CD4 (20)|RD4 (28)|UI7 (14)|
-|D4 (7)|CD3 (21)|RD3 (29)|UI0 (14)|
-|D5 (9)|CD2 (22)|RD2 (30)|UI2 (14)|
-|D6 (10)|CD1 (23)|RD1 (31)|UI4 (14)|
-|D7 (13)|CD0 (24)|RD0 (32)|UI6 (14)|
+|D0 (14)|CD7 (17)|RD7 (25)|U11 (14)|
+|D1 (15)|CD6 (18)|RD6 (26)|U13 (14)|
+|D2 (12)|CD5 (19)|RD5 (27)|U15 (14)|
+|D3 (8)|CD4 (20)|RD4 (28)|U17 (14)|
+|D4 (7)|CD3 (21)|RD3 (29)|U10 (14)|
+|D5 (9)|CD2 (22)|RD2 (30)|U12 (14)|
+|D6 (10)|CD1 (23)|RD1 (31)|U14 (14)|
+|D7 (13)|CD0 (24)|RD0 (32)|U16 (14)|
 
 *Number in brackets are the pin number
 
@@ -32,14 +32,14 @@ In my PAL Colecovision Console the chips are disposed in the motherboard as per 
 
 | | |
 |--------|--------|
-|UI5 - D2|UI7 - D3|
-|UI3 - D1|UI0 - D4|
-|UI1 - D0|UI4 - D6|
-|UI6 - D7|UI2 - D5|
+|U15 - D2|U17 - D3|
+|U13 - D1|U10 - D4|
+|U11 - D0|U14 - D6|
+|U16 - D7|U12 - D5|
 |TMS9928A|TMS9928A|
 
 
-In my case, I need to substitute the 6SB that was the faulty bit, so I looked for the D6 chip, which is UI4.
+In my case, I need to substitute the 6SB that was the faulty bit, so I looked for the D6 chip, which is U14.
 
 I am going to deliver a new version of the software indicating the reference of the faulty chip, but I cannot be sure of all the motherboards releases have exactly the same connections. Pleaase, review this carefully before substitutee any chip!!
 
